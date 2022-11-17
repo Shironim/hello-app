@@ -148,10 +148,11 @@ const Produk = () => {
   ]
   const location = useLocation();
   const link = location.pathname.split("/");
-  const produk = link[2];
+  const produk = link[3];
   const dataProduk = data.filter((n) => {
     return n.gambar == produk
   })
+  // console.log(produk)
   const [jumlah, setJumlah] = useState(0);
   const [harga] = useState(dataProduk[0].harga);
   const [totalHarga, setTotalHarga] = useState(0);
@@ -165,6 +166,7 @@ const Produk = () => {
       setTotalHarga(totalHarga - harga)
     }
   }
+  console.log(harga)
   const simpan = () => {
     let logBefore = localStorage.getItem('keranjang');
     let log = [
@@ -173,20 +175,22 @@ const Produk = () => {
       dataProduk[0].gambar,
       totalHarga,
     ]
-    if (logBefore) {
-      let logTemp = JSON.parse(logBefore);
-      logTemp.push(log);
-      localStorage.setItem('keranjang', JSON.stringify(logTemp));
-    }
-    else {
-      localStorage.setItem('keranjang', JSON.stringify([log]));
+    if (jumlah > 0) {
+      if (logBefore) {
+        let logTemp = JSON.parse(logBefore);
+        logTemp.push(log);
+        localStorage.setItem('keranjang', JSON.stringify(logTemp));
+      }
+      else {
+        localStorage.setItem('keranjang', JSON.stringify([log]));
+      }
     }
   }
   return (
     <div>
       <div className="container pb-2">
         <div>
-          <img width="100%" className="rounded" style={{ objectFit: "cover", maxHeight: "200px" }} src={`/images/produk/${dataProduk[0].gambar}.png`} alt="" />
+          <img width="100%" className="rounded" style={{ objectFit: "cover", maxHeight: "200px" }} src={`/hello-app/images/produk/${dataProduk[0].gambar}.png`} alt="" />
         </div>
         <div className="d-flex justify-content-between mb-3">
           <div>
@@ -241,7 +245,7 @@ const Produk = () => {
             data.map((d, key) => {
               return (
                 <div key={key} className="col-4 px-2 m-0 mb-2">
-                  <img src={`/images/produk/${d.gambar}.png`} width="100%" height="60px" className="rounded" style={{ objectFit: "cover" }} alt="" />
+                  <img src={`/hello-app/images/produk/${d.gambar}.png`} width="100%" height="60px" className="rounded" style={{ objectFit: "cover" }} alt="" />
                   <p className="m-0">{d.nama}</p>
                 </div>
               )

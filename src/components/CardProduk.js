@@ -5,8 +5,8 @@ const CardProduk = ({ title, img, harga, isBestseller }) => {
   return (
     <div className=''>
       <div className="shadow-sm p-2 rounded">
-        <Link to={`/produk/${img}`}>
-          <img src={`/images/produk/${img}.png`} width="100%" height="120px" style={{ objectFit: "cover" }} className="rounded" alt="" />
+        <Link to={`/hello-app/produk/${img}`}>
+          <img src={`/hello-app/images/produk/${img}.png`} width="100%" height="120px" style={{ objectFit: "cover" }} className="rounded" alt="" />
         </Link>
       </div>
       <div className='d-flex justify-content-between mt-2'>

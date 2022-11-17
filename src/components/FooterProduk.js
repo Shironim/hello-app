@@ -17,7 +17,7 @@ const FooterProduk = ({ totalHarga, simpan, jenis }) => {
           <h2 className="m-0 p-0 fs-5 fw-bold">Rp. {totalHarga}</h2>
         </div>
         <div onClick={saveCart} className="align-self-center">
-          <Link to="/keranjang" className="text-decoration-none">
+          <Link to="/hello-app/keranjang" className="text-decoration-none">
             <button className="btn" style={{ backgroundColor: "#FC6A00", borderColor: "#FC6A00" }}>
               <span className="text-white fs-6 fw-bold"> + Keranjang</span>
             </button>

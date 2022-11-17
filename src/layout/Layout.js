@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <div>
       {
-        location.pathname === "/akun" ?
+        location.pathname === "/hello-app/akun" ?
           <section className="d-flex container justify-content-between mt-3 border-bottom border-3 py-2 mb-2 shadow-sm">
             <div>
               <BsChevronLeft color="#000" size={20} />

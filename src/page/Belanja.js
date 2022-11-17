@@ -88,11 +88,11 @@ const Belanja = () => {
     <section>
       <section className="d-flex container m-0 p-0 mt-2">
         <button onClick={() => handleClick("pertanian")} style={{ backgroundColor: "#FC6A00" }} className="btn d-flex rounded p-2 me-1">
-          <img src="/images/buah.png" width="30px" height="30px" className=" align-self-center" alt="" />
+          <img src="/hello-app/images/buah.png" width="30px" height="30px" className=" align-self-center" alt="" />
           <p className="m-0 align-self-center ps-1 text-start text-white" style={{ fontSize: "12px" }}>Pertanian</p>
         </button>
         <button onClick={() => handleClick("manufaktur")} style={{ backgroundColor: "#FC6A00" }} className="btn d-flex rounded p-2 me-1">
-          <img src="/images/RobotPabrik.png" width="30px" height="30px" className="align-self-center" alt="" />
+          <img src="/hello-app/images/RobotPabrik.png" width="30px" height="30px" className="align-self-center" alt="" />
           <p className="m-0 align-self-center ps-1 text-start text-white" style={{ fontSize: "12px" }}>Alat Manufaktur</p>
         </button>
       </section>

@@ -15,11 +15,15 @@ const Keranjang = () => {
       setKeranjang(produk)
       setIsKeranjang(true);
     }
-  }, []);
+  }, [isKeranjang, keranjang]);
   let total = 0;
   keranjang?.map((k) => {
     total += k[3]
   })
+  const deleteLocal = () => {
+    localStorage.removeItem('keranjang');
+    setIsKeranjang(false);
+  }
   return (
     <>
       <div className="pb-2">
@@ -39,7 +43,7 @@ const Keranjang = () => {
                       <div key={key} className="mb-1">
                         <div className="d-flex">
                           <div className="col-5 me-3">
-                            <img src={`/images/produk/${d[2]}.png`} style={{ objectFit: "cover" }} className="rounded" width="100%" height="120px" alt="" />
+                            <img src={`/hello-app/images/produk/${d[2]}.png`} style={{ objectFit: "cover" }} className="rounded" width="100%" height="120px" alt="" />
                           </div>
                           <div className="col-7">
                             <h2 className="fs-6 fw-normal m-0 pb-2">Tomat Segar </h2>
@@ -47,7 +51,7 @@ const Keranjang = () => {
                           </div>
                         </div>
                         <div className="d-flex justify-content-end">
-                          <div className="align-self-center me-3">
+                          <div onClick={deleteLocal} className="align-self-center me-3">
                             <BsFillTrashFill color="#4B4B4B66" size={20} />
                           </div>
                           <div>
@@ -70,14 +74,14 @@ const Keranjang = () => {
               <section className="container pb-3 mb-3 border-bottom border-5">
                 <h1 className="fs-4 fw-bold">Keranjang</h1>
                 <div className="d-flex py-2">
-                  <img src="/images/keranjang.png" alt="" />
+                  <img src="/hello-app/images/keranjang.png" alt="" />
                   <div className="align-self-center">
                     <h2 className="fs-6 fw-bold">Wah, Keranjang kamu masih kosong</h2>
                     <p style={{ fontSize: "12px" }}>Yuk, mulai berbelanja untuk kebutuhan pokok harianmu!</p>
                   </div>
                 </div>
                 <button className="btn w-100" style={{ backgroundColor: "#FC6A00", borderColor: "#FC6A00" }}>
-                  <Link to="/belanja" className="text-decoration-none">
+                  <Link to="/hello-app/belanja" className="text-decoration-none">
                     <span className="text-white fw-bold ">
                       Mulai Belanja
                     </span>
