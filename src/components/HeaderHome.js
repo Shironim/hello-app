@@ -22,9 +22,9 @@ const HeaderHome = () => {
         </div>
       </section>
       <section className="d-flex justify-content-between">
-        <input type="text" className=" w-75 border p-0 border-secondary rounded border-color-secondary" />
-        <button className="btn btn-primary px-2 py-1">
-          <span style={{ fontSize: "12px" }}>Cari</span>
+        <input type="text" className="px-2 w-100 me-3 border p-0 border-secondary rounded border-color-secondary" />
+        <button style={{ backgroundColor: "#FC6A00" }} className="btn px-2 py-1">
+          <span className="text-white" style={{ fontSize: "12px" }}>Cari</span>
         </button>
       </section>
     </header>

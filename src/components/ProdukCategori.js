@@ -1,9 +1,9 @@
-const ProdukCategori = () => {
+const ProdukCategori = ({ gambar, nama }) => {
   return (
-    <div className='d-flex flex-column text-center me-3'>
-      <img src="/images/skeleton.png" height="60px" width="60px" className="rounded" alt="" />
+    <div className='d-flex flex-column align-items-center me-3'>
+      <img src={`/images/${gambar}.png`} height="60px" width="60px" className="rounded" alt="" />
       <span>
-        Sayur
+        {nama}
       </span>
     </div>
   )

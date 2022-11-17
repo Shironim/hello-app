@@ -1,9 +1,6 @@
-import Header from "../components/HeaderBelanja";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsHeartFill } from "react-icons/bs";
 import { Outlet, Link, useLocation } from "react-router-dom"
-import FooterProduk from "../components/FooterProduk";
-import Footer from "../components/Footer";
 const LayoutProduk = () => {
   const location = useLocation();
   // console.log(location);
@@ -20,11 +17,7 @@ const LayoutProduk = () => {
         </div>
       </section>
       <Outlet />
-      <section>
-        {
-          location.pathname === "/keranjang" ? <Footer /> : <FooterProduk />
-        }
-      </section>
+
     </div>
   )
 }
