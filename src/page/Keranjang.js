@@ -43,7 +43,7 @@ const Keranjang = () => {
                       <div key={key} className="mb-1">
                         <div className="d-flex">
                           <div className="col-5 me-3">
-                            <img src={`/hello-app/images/produk/${d[2]}.png`} style={{ objectFit: "cover" }} className="rounded" width="100%" height="120px" alt="" />
+                            <img src={`images/produk/${d[2]}.png`} style={{ objectFit: "cover" }} className="rounded" width="100%" height="120px" alt="" />
                           </div>
                           <div className="col-7">
                             <h2 className="fs-6 fw-normal m-0 pb-2">Tomat Segar </h2>

@@ -38,28 +38,13 @@ const Produk = () => {
       panen: 1,
       stok: "10Kg"
     },
-    {
-      nama: "Sawi",
-      gambar: "sawi",
-      farm: "Ungaran",
-      panen: 1,
-      stok: "70Kg"
-    },
-    {
-      nama: "Timun",
-      gambar: "timun",
-      farm: "Ungaran",
-      panen: 3,
-      stok: "40Kg"
-    },
   ]
   const location = useLocation();
   const link = location.pathname.split("/");
-  const produk = link[3];
+  const produk = link[2];
   const dataProduk = data.filter((n) => {
     return n.gambar == produk
   })
-  // console.log(produk)
   const [jumlah, setJumlah] = useState(0);
   const [harga] = useState(dataProduk[0].harga);
   const [totalHarga, setTotalHarga] = useState(0);
@@ -73,7 +58,6 @@ const Produk = () => {
       setTotalHarga(totalHarga - harga)
     }
   }
-  console.log(harga)
   const simpan = () => {
     let logBefore = localStorage.getItem('keranjang');
     let log = [
@@ -82,22 +66,20 @@ const Produk = () => {
       dataProduk[0].gambar,
       totalHarga,
     ]
-    if (jumlah > 0) {
-      if (logBefore) {
-        let logTemp = JSON.parse(logBefore);
-        logTemp.push(log);
-        localStorage.setItem('keranjang', JSON.stringify(logTemp));
-      }
-      else {
-        localStorage.setItem('keranjang', JSON.stringify([log]));
-      }
+    if (logBefore) {
+      let logTemp = JSON.parse(logBefore);
+      logTemp.push(log);
+      localStorage.setItem('keranjang', JSON.stringify(logTemp));
+    }
+    else {
+      localStorage.setItem('keranjang', JSON.stringify([log]));
     }
   }
   return (
     <>
       <section className="container pb-2">
         <div>
-          <img width="100%" className="rounded" style={{ objectFit: "cover", maxHeight: "200px" }} src={`/hello-app/images/produk/${dataProduk[0].gambar}.png`} alt="" />
+          <img width="100%" className="rounded" style={{ objectFit: "cover", maxHeight: "200px" }} src={`/images/produk/${dataProduk[0].gambar}.png`} alt="" />
         </div>
         <div className="d-flex justify-content-between mb-2">
           <div>
@@ -131,6 +113,9 @@ const Produk = () => {
           <h2 className="fs-5 fw-bold">Deskripsi</h2>
           <p style={{ fontSize: "14px", color: "rgba(36, 35, 35, 0.8)" }}>{dataProduk[0].desc}</p>
         </div>
+        <section>
+
+        </section>
         <section >
           <h2 className="fs-5 fw-semibold">Hasil Panen Petani Lainnya</h2>
           <div className="grid">
