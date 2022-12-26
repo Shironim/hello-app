@@ -13,21 +13,21 @@ function Slider() {
       <Carousel.Item className='p-1'>
         <img
           className="d-block w-100"
-          src="/images/slider1.png"
+          src="/hello-app/images/slider1.png"
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item className='p-1'>
         <img
           className="d-block w-100"
-          src="/images/slider1.png"
+          src="/hello-app/images/slider1.png"
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item className='p-1'>
         <img
           className="d-block w-100"
-          src="/images/slider1.png"
+          src="/hello-app/images/slider1.png"
           alt="First slide"
         />
       </Carousel.Item>

@@ -5,11 +5,13 @@ import { Link } from "react-router-dom"
 
 const CardProduk = ({ title, img, farm, stok, panen }) => {
   return (
-    <div className='shadow-sm border border-1 rounded overflow-hidden'>
-      <Link to={`/produk/${img}`}>
-        <img src={`/images/produk/${img}.png`} width="100%" height="120px" style={{ objectFit: "cover" }} alt="" />
-      </Link>
-      <div className='d-flex mt-2 p-2'>
+    <div className=''>
+      <div className="shadow-sm p-2 rounded">
+        <Link to={`/hello-app/produk/${img}`}>
+          <img src={`/hello-app/images/produk/${img}.png`} width="100%" height="120px" style={{ objectFit: "cover" }} className="rounded" alt="" />
+        </Link>
+      </div>
+      <div className='d-flex mt-2'>
         <div className="w-100">
           <h3 className='m-0 fs-4 fw-bold mb-2'>{title}</h3>
           <div className="d-flex justify-content-between mb-2 fs-6">

@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App border border-2 position-relative min-vh-100">
       <Routes>
-        <Route element={<Layout />}>
+        <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="beranda" element={<Home />} />
           <Route path="belanja" element={<Belanja />} />
@@ -29,10 +29,21 @@ function App() {
             <Route path="materi" element={<Materi />} />
           </Route>
         </Route>
-        <Route path='produk' element={<LayoutProduk />}>
+        <Route path='/hello-app' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="beranda" element={<Home />} />
+          <Route path="belanja" element={<Belanja />} />
+          <Route path="akun" element={<Akun />} />
+          <Route path="edukasi" element={<Edukasi />} >
+            <Route index element={<Webinar />} />
+            <Route path='webinar' element={<Webinar />} />
+            <Route path="materi" element={<Materi />} />
+          </Route>
+        </Route>
+        <Route path='/hello-app/produk/' element={<LayoutProduk />}>
           <Route path=':produk' element={<Produk />} />
         </Route>
-        <Route path='keranjang' element={<LayoutKeranjang />}>
+        <Route path='/hello-app/keranjang' element={<LayoutKeranjang />}>
           <Route index element={<Keranjang />} />
         </Route>
       </Routes >

@@ -13,13 +13,13 @@ const HeaderBelanja = () => {
       <nav>
         <ul className='d-flex justify-content-between m-0 p-0 text-decoration-none'>
           <li className='text-center p-1'>
-            <Link to="beranda">
+            <Link to="/hello-app/beranda">
               <BsHouseFill size={20} color="#fd7e14" />
               <p className="text-white" style={{ fontSize: "12px" }}>Beranda</p>
             </Link>
           </li>
           <li className='text-center p-1'>
-            <Link to="/belanja">
+            <Link to="/hello-app/belanja">
               <BsHandbagFill size={20} color="#6c757d" />
               <p className="text-white" style={{ fontSize: "12px" }}>Belanja</p>
             </Link>

@@ -8,7 +8,7 @@ const Akun = () => {
     <div>
       <h2 className="fs-5 fw-bold">Akun</h2>
       <div className="d-flex mb-2">
-        <img src="/images/man.jpg" style={{ objectFit: "cover" }} width="60px" height="60px" className="me-3 rounded-circle" alt="" />
+        <img src="/hello-app/images/man.jpg" style={{ objectFit: "cover" }} width="60px" height="60px" className="me-3 rounded-circle" alt="" />
         <div>
           <p className="fs-5 fw-bold m-0 p-0">Muhammad Abdillah</p>
           <p>PT Jababeka</p>
