@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom"
+// Pages
 import Home from "./page/Home"
 import Belanja from "./page/Belanja"
 import Keranjang from "./page/Keranjang"
@@ -8,7 +9,7 @@ import Webinar from "./page/Webinar"
 import Materi from "./page/Materi"
 import Akun from "./page/Akun"
 import Produk from "./components/Produk"
-
+// Layout
 import Layout from "./layout/Layout"
 import LayoutProduk from "./layout/LayoutProduk"
 import LayoutKeranjang from "./layout/LayoutKeranjang"

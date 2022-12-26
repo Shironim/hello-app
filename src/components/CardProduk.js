@@ -1,30 +1,34 @@
 // import { BsFillCartPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom"
+// import IconKeranjang from '/images/produk/apel.jpg'
+// import IconToko from '/icon/toko.png'
 
-const CardProduk = ({ title, img, harga, isBestseller }) => {
+const CardProduk = ({ title, img, farm, stok, panen }) => {
   return (
-    <div className=''>
-      <div className="shadow-sm p-2 rounded">
-        <Link to={`/produk/${img}`}>
-          <img src={`/images/produk/${img}.png`} width="100%" height="120px" style={{ objectFit: "cover" }} className="rounded" alt="" />
-        </Link>
-      </div>
-      <div className='d-flex justify-content-between mt-2'>
+    <div className='shadow-sm border border-1 rounded overflow-hidden'>
+      <Link to={`/produk/${img}`}>
+        <img src={`/images/produk/${img}.png`} width="100%" height="120px" style={{ objectFit: "cover" }} alt="" />
+      </Link>
+      <div className='d-flex mt-2 p-2'>
         <div className="w-100">
-          <h3 className='m-0 fs-6 fw-bold'>{title}</h3>
-          <div className="d-flex justify-content-between">
-            <p className='m-0'>Rp. {harga}</p>
-            {
-              isBestseller ?
-                <div className="align-self-center rounded-pill" style={{ backgroundColor: "rgba(252, 106, 0, 0.25)" }}>
-                  <p className="m-0 px-2 py-1 " style={{ fontSize: "12px", color: "#FC6A00" }}>Best Seller</p>
-                </div>
-                : ""
-            }
-
+          <h3 className='m-0 fs-4 fw-bold mb-2'>{title}</h3>
+          <div className="d-flex justify-content-between mb-2 fs-6">
+            <p className="m-0 d-flex">
+              <img src={`/icon/toko.png`} className="align-self-center me-1" width="16px" height="16px" alt="" />
+              <span>{farm}</span>
+            </p>
+            <p className="m-0 d-flex">
+              <img src={`/icon/keranjang.png`} className="align-self-center me-1" width="16px" height="16px" alt="" />
+              <span>{stok}</span>
+            </p>
           </div>
+          {
+            panen == 1 ?
+              <p className='m-0 fst-italic' style={{ fontSize: "14px" }}>Panen hari ini</p>
+              :
+              <p className='m-0 fst-italic' style={{ fontSize: "14px" }}>Panen {panen} hari yang lalu</p>
+          }
         </div>
-
       </div>
     </div>
   )
